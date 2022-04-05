@@ -72,4 +72,24 @@ document.getElementById('add_seat_geek_event').addEventListener('click', async f
         });
 });
 
-console.log(document.getElementById('11').innerText == '');
+// console.log(document.getElementById('11').innerText == '');
+
+// Export functions
+function createPDF() {
+    var sTable = document.getElementById('schedule_table').innerHTML;
+
+    // CREATE A WINDOW OBJECT.
+    var win = window.open('', '', 'height=700,width=700');
+
+    win.document.write('<html><head>');
+    win.document.write('<title>Profile</title>');   // <title> FOR PDF HEADER.
+    win.document.write(style);          // ADD STYLE INSIDE THE HEAD TAG.
+    win.document.write('</head>');
+    win.document.write('<body>');
+    win.document.write(sTable);         // THE TABLE CONTENTS INSIDE THE BODY TAG.
+    win.document.write('</body></html>');
+
+    win.document.close(); 	// CLOSE THE CURRENT WINDOW.
+
+    win.print();    // PRINT THE CONTENTS.
+}
