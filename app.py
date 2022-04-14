@@ -16,7 +16,7 @@ def hello_world():  # put application's code here
 @app.post('/export')
 def exports():
     print(request.data.decode())
-    pdfkit.from_string(request.data.decode(), 'static/img/output.pdf')
+    pdfkit.from_string(request.data.decode(), 'static/img/output.pdf', configuration=pdfkit.configuration(wkhtmltopdf='./bin/wkhtmltopdf'))
     return request.data
 
 
@@ -24,5 +24,7 @@ def exports():
 def get_export():
     return render_template('export-page.html')
 
+
 if __name__ == '__main__':
+    config = pdfkit.configuration(wkhtmltopdf='./bin/wkhtmltopdf')
     app.run()
