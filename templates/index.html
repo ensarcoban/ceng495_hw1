@@ -73,8 +73,8 @@
                 <h1 class="h2">Scheduleeit</h1>
                 <div class="btn-toolbar mb-2 mb-md-0">
                     <div class="btn-group me-2">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary" onclick="createPDF()">Export</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary"><a href="export">Latest Export</a></button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary" id="export_button">Export</button>
                     </div>
                 </div>
             </div>
@@ -180,5 +180,6 @@
         integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha"
         crossorigin="anonymous"></script>
 <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+<script src="{{ url_for('static', filename='js/html2canvas.js') }}"></script>
 
 </html>
